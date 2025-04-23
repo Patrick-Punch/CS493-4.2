@@ -7,11 +7,14 @@ require('dotenv').config();
 
 const mysql = require('mysql2/promise');
 
-const mysql_host = process.env.MYSQL_HOST || 'localhost';
+const mysql_host = process.env.MYSQL_HOST || 'mysql-server';
+// const mysql_host = process.env.MYSQL_HOST || 'localhost';
 const mysql_port = process.env.MYSQL_PORT || '3306';
 const mysql_db = process.env.MYSQL_DATABASE || 'messagesdb';
 const mysql_user = process.env.MYSQL_USER || 'messagesuser';
 const mysql_password = process.env.MYSQL_PASSWORD;
+
+console.log(mysql_host)
 
 const mysqlPool = mysql.createPool({
     connectionLimit: 10,
